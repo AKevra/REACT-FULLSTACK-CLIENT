@@ -12,18 +12,18 @@ function Post() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+    axios.get(`https://posts-fullstack.netlify.app/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+    axios.get(`https://posts-fullstack.netlify.app/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, [id]); 
 
   const addComment = () => {
     axios
-      .post("http://localhost:3001/comments", {
+      .post("https://posts-fullstack.netlify.app/comments", {
         commentBody: newComment,
         PostId: id,
       },
@@ -45,7 +45,7 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`http://localhost:3001/comments/${id}`, {
+      .delete(`https://posts-fullstack.netlify.app/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -59,7 +59,7 @@ function Post() {
 
   const deletePost = (comId) => {
     axios
-    .delete(`http://localhost:3001/posts/${comId}`, {
+    .delete(`https://posts-fullstack.netlify.app/posts/${comId}`, {
       headers: { accessToken: localStorage.getItem("accessToken") },
     })
     .then(() => {
@@ -71,7 +71,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Enter New Title:");
       axios.put(
-        "http://localhost:3001/posts/title",
+        "https://posts-fullstack.netlify.app/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -85,7 +85,7 @@ function Post() {
     } else {
       let newPostText = prompt("Enter New Text:");
       axios.put(
-        "http://localhost:3001/posts/postText",
+        "https://posts-fullstack.netlify.app/posts/postText",
         {
           newText: newPostText,
           id: id,
