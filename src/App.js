@@ -20,7 +20,7 @@ function App() {
   });
   useEffect(() => {
     axios
-      .get("https://posts-fullstack.netlify.app/auth/auth", {
+      .get("https://react-fullstack-posts-app.herokuapp.com/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
