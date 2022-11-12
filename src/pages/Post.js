@@ -12,18 +12,18 @@ function Post() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://posts-fullstack.netlify.app/posts/byId/${id}`).then((response) => {
+    axios.get(`https://637003a923468f00097145c8--posts-fullstack.netlify.app/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`https://posts-fullstack.netlify.app/comments/${id}`).then((response) => {
+    axios.get(`https://637003a923468f00097145c8--posts-fullstack.netlify.app/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, [id]); 
 
   const addComment = () => {
     axios
-      .post("https://posts-fullstack.netlify.app/comments", {
+      .post("https://637003a923468f00097145c8--posts-fullstack.netlify.app/comments", {
         commentBody: newComment,
         PostId: id,
       },
@@ -45,7 +45,7 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`https://posts-fullstack.netlify.app/comments/${id}`, {
+      .delete(`https://637003a923468f00097145c8--posts-fullstack.netlify.app/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -59,7 +59,7 @@ function Post() {
 
   const deletePost = (comId) => {
     axios
-    .delete(`https://posts-fullstack.netlify.app/posts/${comId}`, {
+    .delete(`https://637003a923468f00097145c8--posts-fullstack.netlify.app/posts/${comId}`, {
       headers: { accessToken: localStorage.getItem("accessToken") },
     })
     .then(() => {
@@ -71,7 +71,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Enter New Title:");
       axios.put(
-        "https://posts-fullstack.netlify.app/posts/title",
+        "https://637003a923468f00097145c8--posts-fullstack.netlify.app/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -85,7 +85,7 @@ function Post() {
     } else {
       let newPostText = prompt("Enter New Text:");
       axios.put(
-        "https://posts-fullstack.netlify.app/posts/postText",
+        "https://637003a923468f00097145c8--posts-fullstack.netlify.app/posts/postText",
         {
           newText: newPostText,
           id: id,

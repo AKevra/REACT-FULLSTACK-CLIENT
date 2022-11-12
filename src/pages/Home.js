@@ -14,7 +14,7 @@ function Home() {
       navigate("/login");
     } else {
       axios
-        .get("https://posts-fullstack.netlify.app/posts", {
+        .get("https://637003a923468f00097145c8--posts-fullstack.netlify.app/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -31,7 +31,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        "https://posts-fullstack.netlify.app/likes",
+        "https://637003a923468f00097145c8--posts-fullstack.netlify.app/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )
