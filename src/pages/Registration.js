@@ -17,7 +17,7 @@ function Registration() {
   });
 
   const onSubmit = (data) => {
-    axios.post("https://main--posts-fullstack.netlify.app/auth", data).then(() => {
+    axios.post("https://posts-fullstack.netlify.app/auth", data).then(() => {
       navigate("/login");
     });
   };

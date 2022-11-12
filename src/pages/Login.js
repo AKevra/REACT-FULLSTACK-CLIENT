@@ -11,7 +11,7 @@ function Login() {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("https://main--posts-fullstack.netlify.app/auth/login", data).then((response) => {
+    axios.post("https://posts-fullstack.netlify.app/auth/login", data).then((response) => {
       if(response.data.error){ alert(response.data.error);
         }else{
           localStorage.setItem("accessToken", response.data.token);

@@ -20,7 +20,7 @@ function CreatePost() {
         postText: Yup.string().required(),
     });
     const onSubmit = (data) => {
-        axios.post("https://main--posts-fullstack.netlify.app/posts", data, {headers: 
+        axios.post("https://posts-fullstack.netlify.app/posts", data, {headers: 
         {accessToken: localStorage.getItem("accessToken")}}).then(() => {
           navigate('/');
         });

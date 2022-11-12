@@ -8,7 +8,7 @@ function ChangePassword() {
   const changePassword = () => {
     axios
       .put(
-        "https://main--posts-fullstack.netlify.app/auth/changepassword",
+        "https://posts-fullstack.netlify.app/auth/changepassword",
         {
           oldPassword: oldPassword,
           newPassword: newPassword,
